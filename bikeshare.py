@@ -78,6 +78,8 @@ def load_data(city, month, day):
 
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
+
+    # Updated dt.day_name() to comply with the latest version of python
     df['day_of_week'] = df['Start Time'].dt.day_name()
     df['hour'] = df['Start Time'].dt.hour
 
@@ -144,7 +146,12 @@ def station_stats(df):
     print('The most commonly used end station is: ', most_common_end_station)
 
     # TO DO: display most frequent combination of start station and end station trip
+
+
+
     df['common_route'] = 'between: ' + df['Start Station'] + ' and ' + df['End Station']
+    #To calculate the most frequent route combination between Start Station and End Station we can also use 'groupby' in pandas
+
     most_common_route = df['common_route'].mode()[0]
     print('The most common route is', most_common_route)
 
@@ -212,6 +219,9 @@ def user_stats(df):
         common_birth_year = df['Birth Year'].value_counts().idxmax()
 
         print('The most common birth year is:', common_birth_year)
+
+        #You can also use 'except' instead od if/else to handle the issue of Washington dataset missing information for 'Gender' and 'Birth Year'.
+
 
     else:
         print('There is no birth information for this city')
