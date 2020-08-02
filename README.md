@@ -5,7 +5,7 @@
 Mark's Git Project
 
 ### Description
-Utilise tools and commands learned in the Udacity course.
+Utilise tools and commands learned in the Udacity course and revise display messages in bikeshare.py file. 
 
 ### Files used
 bikeshare.py
