@@ -149,7 +149,7 @@ def station_stats(df):
 
     df['common_route'] = 'between: ' + df['Start Station'] + ' and ' + df['End Station']
     #To calculate the most frequent route combination between Start Station and End Station we can also use 'groupby' in pandas
-    
+
     most_common_route = df['common_route'].mode()[0]
     print('The most common route is', most_common_route)
 
@@ -217,6 +217,9 @@ def user_stats(df):
         common_birth_year = df['Birth Year'].value_counts().idxmax()
 
         print('The most common birth year is:', common_birth_year)
+
+        #You can also use 'except' instead od if/else to handle the issue of Washington dataset missing information for 'Gender' and 'Birth Year'.
+
 
     else:
         print('There is no birth information for this city')
