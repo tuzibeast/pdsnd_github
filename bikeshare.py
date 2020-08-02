@@ -144,7 +144,12 @@ def station_stats(df):
     print('The most commonly used end station is: ', most_common_end_station)
 
     # TO DO: display most frequent combination of start station and end station trip
+
+
+
     df['common_route'] = 'between: ' + df['Start Station'] + ' and ' + df['End Station']
+    #To calculate the most frequent route combination between Start Station and End Station we can also use 'groupby' in pandas
+    
     most_common_route = df['common_route'].mode()[0]
     print('The most common route is', most_common_route)
 
